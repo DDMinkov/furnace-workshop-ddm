@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Майстерня печей</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto+Slab:wght@700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <svg class="logo-svg" width="145" height="41">
+                    <use href="images/sprite.svg#icon-logo"></use>
+                </svg>
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">Про нас</a></li>
+                    <li><a href="#" class="nav-link">Переваги</a></li>
+                    <li><a href="#" class="nav-link">Каталог</a></li>
+                    <li><a href="#" class="nav-link">Відгуки</a></li>
+                    <li><a href="#" class="nav-link">Галерея</a></li>
+                    <li><a href="#" class="nav-link">Контакти</a></li>
+                </ul>
+                <button class="button btn-order mobile-nav-btn">Замовити</button>
+            </nav>
+
+            <button class="button btn-order header-btn">Замовити</button>
+            <button class="menu-toggle">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="video/firee.mp4" type="video/mp4">
+                Ваш браузер не підтримує відео.
+            </video>
+
+            <div class="container hero-content">
+                <h1 class="hero-title">Відчуйте неперевершене <br> тепло та стиль</h1>
+                <p class="hero-text">Наші печі та каміни створені для вашого комфорту. Вони поєднують елегантний дизайн з високою ефективністю.</p>
+                <div class="hero-btns">
+                    <button class="button btn-order">Замовити</button>
+                    <button class="button btn-outline">Детальніше</button>
+                </div>
+            </div>
+        </section>
+        <section class="about">
+            <div class="container about-container">
+                <div class="about-image-wrapper">
+                    <img src="images/fireplacelady.png" alt="Жінка біля каміна" class="about-img">
+                </div>
+
+                <div class="about-content">
+                    <h2 class="about-title">Ваші експерти у обігріві</h2>
+                    <p class="about-text">
+                        Майстер печей спеціалізується на виробництві високоякісних печей та камінів. 
+                        Ми пишаємося своєю майстерністю та прагнемо забезпечити максимальний комфорт для наших клієнтів.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.nav');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const toggleMenu = () => {
+            const isOpen = nav.classList.toggle('is-open');
+            menuToggle.textContent = isOpen ? '✕' : '☰';
+            document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+        };
+
+        menuToggle.addEventListener('click', toggleMenu);
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('is-open')) {
+                    toggleMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+.about {
+    position: relative;
+    padding: 60px 0;
+    background-color: var(--bg-dark);
+    background-image: url('../images/fire1.jpg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(51, 51, 51, 0.71); 
+    z-index: 0;
+}
+
+.about-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column-reverse; 
+    align-items: center;
+    gap: 30px;
+}
+
+.about-image-wrapper {
+    width: 100%; 
+    max-width: 550px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; 
+    border-radius: 20px;
+    display: block;
+}
+
+.about-content {
+    width: 100%;
+    text-align: left;
+}
+
+.about-title {
+    font-family: var(--font-title);
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+.about-text {
+    font-family: var(--font-main);
+    color: var(--text-gray);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .about-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .about-content {
+        width: 45%;
+    }
+
+    .about-image-wrapper {
+        width: 50%; 
+    }
+}
+
+@media (min-width: 1200px) {
+    .about-image-wrapper {
+        width: 45%; 
+    }
+
+    .about-img {
+        height: 380px;
+    }
+
+    .about-title {
+        font-size: 48px;
+    }
+}

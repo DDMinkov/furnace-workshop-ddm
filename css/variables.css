@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #CE4D46;
+    --primary-shadow: #A43D38;
+    --text-light: #FFFFFF;
+    --text-gray: #CCCCCC;
+    --bg-dark: #1A1817;
+    --bg-header: #221D1D;
+    --border-header: #3F3A3A;
+    --font-main: 'Heebo', sans-serif;
+    --font-title: 'Roboto Slab', serif;
+}
+
+body {
+    font-family: var(--font-main);
+    font-weight: 400;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.container {
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 1200px;
+    }
+}
