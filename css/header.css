@@ -9,6 +9,13 @@
     z-index: 100;
 }
 
+.logo {
+    position: relative; /* z-index only works on positioned elements */
+    z-index: 105;       /* Higher than menu-toggle (101) and nav (99) */
+    display: flex;
+    align-items: center;
+}
+
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -60,7 +67,12 @@
     text-decoration: none;
     color: var(--text-light);
     font-size: 18px;
-    transition: color 0.2s;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #CE4D46;
 }
 
 .menu-toggle {

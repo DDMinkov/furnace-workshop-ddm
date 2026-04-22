@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/advantages.css">
 </head>
 <body>
     <header class="header">
@@ -27,7 +28,7 @@
             <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="#about" class="nav-link">Про нас</a></li>
-                    <li><a href="#" class="nav-link">Переваги</a></li>
+                    <li><a href="#advantages" class="nav-link">Переваги</a></li>
                     <li><a href="#" class="nav-link">Каталог</a></li>
                     <li><a href="#" class="nav-link">Відгуки</a></li>
                     <li><a href="#" class="nav-link">Галерея</a></li>
@@ -72,11 +73,72 @@
                 </div>
             </div>
         </section>
+        
+        <section id="advantages" class="advantages">
+            <div class="container advantages-container">
+                <h2 class="advantages-main-title">Найкращі каміни та печі на ринку</h2>
+                
+                <ul class="advantages-list">
+                    <li class="advantages-item">
+                        <div class="advantages-header">
+                            <svg class="advantages-icon" width="48" height="48">
+                                <use href="images/sprite.svg#icon-experience"></use>
+                            </svg>
+                            <h3 class="advantages-title">Досвід та Майстерність</h3>
+                            <button class="advantages-toggle" aria-label="Toggle Details">
+                                <svg width="32" height="32"><use href="images/sprite.svg#icon-chevron"></use></svg>
+                            </button>
+                        </div>
+                        <div class="advantages-content">
+                            <p class="advantages-text">
+                                Наші фахівці – це досвідчені майстри своєї справи. Кожен етап, від вибору до монтажу, виконується з ювелірною точністю.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="advantages-item">
+                        <div class="advantages-header">
+                            <svg class="advantages-icon" width="48" height="48">
+                                <use href="images/sprite.svg#icon-assortment"></use>
+                            </svg>
+                            <h3 class="advantages-title">Широкий Асортимент</h3>
+                            <button class="advantages-toggle" aria-label="Toggle Details">
+                                <svg width="32" height="32"><use href="images/sprite.svg#icon-chevron"></use></svg>
+                            </button>
+                        </div>
+                        <div class="advantages-content">
+                            <p class="advantages-text">
+                                У нас ви знайдете ідеальне рішення для будь-якого інтер'єру та бюджету: сучасні печі, класичні каміни та аксесуари.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="advantages-item">
+                        <div class="advantages-header">
+                            <svg class="advantages-icon" width="48" height="48">
+                                <use href="images/sprite.svg#icon-service"></use>
+                            </svg>
+                            <h3 class="advantages-title">Комплексний Сервіс</h3>
+                            <button class="advantages-toggle" aria-label="Toggle Details">
+                                <svg width="32" height="32"><use href="images/sprite.svg#icon-chevron"></use></svg>
+                            </button>
+                        </div>
+                        <div class="advantages-content">
+                            <p class="advantages-text">
+                                Ми пропонуємо повний спектр послуг: професійна консультація, індивідуальний підхід та гарантійне обслуговування.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </main>
     <script>
         const menuToggle = document.querySelector('.menu-toggle');
         const nav = document.querySelector('.nav');
         const navLinks = document.querySelectorAll('.nav-link');
+        const logo = document.querySelector('.logo');
+        const advantageItems = document.querySelectorAll('.advantages-item');
 
         const toggleMenu = () => {
             const isOpen = nav.classList.toggle('is-open');
@@ -91,6 +153,19 @@
                 if (nav.classList.contains('is-open')) {
                     toggleMenu();
                 }
+            });
+        });
+
+        logo.addEventListener('click', () => {
+            if (nav.classList.contains('is-open')) {
+                toggleMenu();
+            }
+        });
+        
+        advantageItems.forEach(item => {
+            const header = item.querySelector('.advantages-header');
+            header.addEventListener('click', () => {
+                item.classList.toggle('is-active');
             });
         });
     </script>
